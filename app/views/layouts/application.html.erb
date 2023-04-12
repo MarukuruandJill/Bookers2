@@ -6,10 +6,9 @@
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="https://kit.fontawesome.com/8a41df06e7.js" crossorigin="anonymous"></script>
+   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+   <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+   <script src="https://kit.fontawesome.com/8a41df06e7.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -23,6 +22,8 @@
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <spna class="navbar-toggler-icon"></span>
           </button>
+
+
           <div class="collapse navbar-collapse" id="navbarNavDropdown" style>
             <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
