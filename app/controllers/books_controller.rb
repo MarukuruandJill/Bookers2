@@ -2,6 +2,7 @@ class BooksController < ApplicationController
   #before_action :is_matching_login_user, only: [:edit, :update]
   #before_action :user_info_new_book, only: [:index, :show]
   before_action :authenticate_user!,　except: [:top, :about]
+  before_action :correct_post,only: [:edit]
   #before_action :ensure_current_user, {only: [:edit,:update,:destroy]}
 
   def index
@@ -74,5 +75,12 @@ class BooksController < ApplicationController
       redirect_to books_path
     end
   end
+
+  def correct_post
+        @book = Book.find(params[:id])
+    unless @book.user.id == current_user.id
+      redirect_to books_path
+    end
+end
 
 end
